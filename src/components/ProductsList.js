@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom'
 
 const ProductsList = ({ title }) => {
 
-    const [product, setProduct] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
         axios.get('/products')
             .then(res => {
                 if (res.data.length > 0) {
-                    setProduct(res.data)
+                    setProducts(res.data)
                 }
             })
             .catch(err => console.log(err)
@@ -24,7 +24,7 @@ const ProductsList = ({ title }) => {
             <h4> {title}</h4>
             <CardGroup >
                 {
-                    product.map(product => {
+                    products.map(product => {
                         return (
                             <Link key={product._id} to={"/product/" + product._id}>
                                 <Product product={product} />
