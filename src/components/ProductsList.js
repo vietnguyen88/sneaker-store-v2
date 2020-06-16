@@ -10,7 +10,7 @@ const ProductsList = ({ title }) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get('/products')
+        axios.get('https://sneaker-store-v2-api.herokuapp.com/products')
             .then(res => {
                 if (res.data.length > 0) {
                     setProducts(res.data)
