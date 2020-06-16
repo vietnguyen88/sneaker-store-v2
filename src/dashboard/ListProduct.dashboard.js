@@ -9,7 +9,7 @@ const ListProduct = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4000/products')
+        axios.get('/products')
             .then(res => {
                 if (res.data.length > 0) {
                     setProducts(res.data)
@@ -21,7 +21,7 @@ const ListProduct = () => {
 
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:4000/products/delete/' + id)
+        axios.delete('/products/delete/' + id)
             .then(res => console.log(res.data));
         setProducts(products.filter(product => product._id !== id))
     }

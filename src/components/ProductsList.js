@@ -10,7 +10,7 @@ const ProductsList = ({ title }) => {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4000/products')
+        axios.get('/products')
             .then(res => {
                 if (res.data.length > 0) {
                     setProduct(res.data)

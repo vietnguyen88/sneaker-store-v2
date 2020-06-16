@@ -43,7 +43,7 @@ const EditProduct = () => {
             productCategory: category
         }
 
-        axios.post('http://localhost:4000/products/update/' + id, product)
+        axios.post('/products/update/' + id, product)
             .then(res => console.log(res.data))
 
         window.location = '/dashboard/'

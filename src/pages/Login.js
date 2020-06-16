@@ -13,7 +13,7 @@ const Login = () => {
             username,
             password
         }
-        axios.post('http://localhost:4000/users/login', user)
+        axios.post('/users/login', user)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }

@@ -20,7 +20,7 @@ const CreateProduct = () => {
             productCategory: category
         }
 
-        axios.post('http://localhost:4000/products/create', product)
+        axios.post('/products/create', product)
             .then(res => console.log(res.data))
         // console.log(product);
 
