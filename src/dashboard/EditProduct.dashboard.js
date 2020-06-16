@@ -16,7 +16,7 @@ const EditProduct = () => {
 
     useEffect(() => {
         const fetchProduct = () => {
-            axios.get('http://localhost:4000/products/' + id)
+            axios.get('https://sneaker-store-v2-api.herokuapp.com/products/' + id)
                 .then(res => {
                     if (res.data !== null) {
                         setName(res.data.productName)
@@ -43,7 +43,7 @@ const EditProduct = () => {
             productCategory: category
         }
 
-        axios.post('/products/update/' + id, product)
+        axios.post('https://sneaker-store-v2-api.herokuapp.com/products/update/' + id, product)
             .then(res => console.log(res.data))
 
         window.location = '/dashboard/'

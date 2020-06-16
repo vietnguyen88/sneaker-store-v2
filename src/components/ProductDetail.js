@@ -16,8 +16,7 @@ const ProductDetail = () => {
     })
 
     useEffect(() => {
-
-        axios.get('/products/' + id)
+        axios.get('https://sneaker-store-v2-api.herokuapp.com/products/' + id)
             .then(res => {
                 if (res.data !== null) {
                     setProduct({
